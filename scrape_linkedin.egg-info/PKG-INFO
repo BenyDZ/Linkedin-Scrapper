@@ -1,4 +1,4 @@
-Metadata-Version: 1.1
+Metadata-Version: 2.1
 Name: scrape-linkedin
 Version: 1.0.0
 Summary: A way to scrape user datas from linkedin
@@ -7,9 +7,32 @@ Author: Beny Dziengue
 Author-email: bdziengue@gmail.com
 License: UNKNOWN
 Download-URL: https://github.com/BenyDZ/Linkedin-Scrapper.git/dist/1.0.0.tar.gz
-Description: UNKNOWN
+Description: # Linkedin_Scrapper
+        A way to scrappe data in linkedin
+        
+        # Installation
+        ```
+        pip install linkedin_scraper
+        ```
+        
+        # Products
+        Person scraper
+        
+        Company scraper , coming soon...
+        
+        # How to use it?
+        It's very simple, what you need are just, you're `linkedin email account` and your `password`.
+        Like a lot of person can have the same name, you need to know the company where he work, it'll easier 
+        to find the right person like that.
+        
+        ### Usage example
+        ```
+        from linkedin_scraper import Account, Person
+        ```
+        
 Keywords: linkedin,scraping,scraper
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
