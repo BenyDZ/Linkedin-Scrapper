@@ -23,6 +23,8 @@ setup(
         description = 'A way to scrape user datas from linkedin',
         author = 'Beny Dziengue',
         author_email = 'bdziengue@gmail.com',
+        long_description=long_description,
+        long_description_content_type="text/markdown",
         url = 'https://github.com/BenyDZ/Linkedin-Scrapper.git', # use the URL to the github repo
         download_url = 'https://github.com/BenyDZ/Linkedin-Scrapper.git/dist/' + version + '.tar.gz',
         keywords = ['linkedin', 'scraping', 'scraper'], 
