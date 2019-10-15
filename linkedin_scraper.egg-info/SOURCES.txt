@@ -1,0 +1,11 @@
+README.rst
+setup.cfg
+setup.py
+linkedin_scraper/__init__.py
+linkedin_scraper/account.py
+linkedin_scraper/person.py
+linkedin_scraper.egg-info/PKG-INFO
+linkedin_scraper.egg-info/SOURCES.txt
+linkedin_scraper.egg-info/dependency_links.txt
+linkedin_scraper.egg-info/requires.txt
+linkedin_scraper.egg-info/top_level.txt

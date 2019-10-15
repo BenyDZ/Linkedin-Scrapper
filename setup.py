@@ -17,7 +17,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-        name = 'linkedin_scraper',
+        name = 'scrape_linkedin',
         packages = ['linkedin_scraper'], # this must be the same as the name above
         version = version,
         description = 'A way to scrape user datas from linkedin',
