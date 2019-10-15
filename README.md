@@ -3,7 +3,7 @@ A way to scrappe data in linkedin
 
 # Installation
 ```
-pip install linkedin_scraper
+pip install scrape-linkedin
 ```
 
 # Actual product
