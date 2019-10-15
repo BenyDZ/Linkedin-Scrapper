@@ -33,7 +33,7 @@ person = Person("pankit chheda", "invideo", driver)
 person.search()
 
 #get experiences of the person
-person.get_experiences()
+experiences = person.get_experiences()
 ```
 
 ### Experiences
