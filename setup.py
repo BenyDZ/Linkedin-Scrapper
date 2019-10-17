@@ -8,7 +8,7 @@ here = path.abspath(path.dirname(__file__))
 
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
-    open('linkedin_scraper/__init__.py').read(),
+    open('linkedin_scrapper/__init__.py').read(),
     re.M
     ).group(1)
 
@@ -17,8 +17,8 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-        name = 'scrape_linkedin',
-        packages = ['linkedin_scraper'], # this must be the same as the name above
+        name = 'linkedin-scrapper',
+        packages = ['linkedin_scrapper'], # this must be the same as the name above
         version = version,
         description = 'A way to scrape user datas from linkedin',
         author = 'Beny Dziengue',

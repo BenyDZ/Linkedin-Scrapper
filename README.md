@@ -3,14 +3,11 @@ A way to scrappe data in linkedin
 
 # Installation
 ```
-pip install scrape-linkedin
+pip install linkedin-scrapper
 ```
 
-# Actual product
+# Product
 Person scraper
-
-# Coming soon ...
-Person scraper : Scraping a person by adding her account link
 
 Company scraper
 
@@ -22,9 +19,9 @@ to find the right person like that.
 ### Usage example
 ```
 #import needed object
-from linkedin_scraper import Person, Account
+from linkedin_scrapper import Person, Account
 
-myAccount = Account("youremail@gmail.com", "yourpassword")
+myAccount = Account("youremail@gmail.com", "your_password", "driver_name")
 #login in linkedin account, return the driver
 driver = myAccount.login()
 
@@ -46,13 +43,13 @@ That is the skills that they have. `get_skills()`, return a list of skills.
 That is the past educations they have. `get_training()`, return a list of school names, degrees and domains like `Marien-Ngouaby University, Master, Software Engineering`.
 
 ### Knowledge and tools
-That is the knowledge of sector and tools they know. `get_Knowledges_tools()`, return a list of knowledges and/or tools.
+That is the knowledge of sector and tools they know. `get_knowledges_tools()`, return a list of knowledges and/or tools.
 
-## Others
-Don't need to have any driver. Chrome driver will be automaticaly installed.
-Must login just the first time, after that your session will be saved on the driver cookies
+## Drivers
+Don't need to have any driver exe files. Just enter a driver name and it will be installed.
 
 # Version
 
-Version 1.0.x
+Version 1.0
+
 * First Publish, only Person scraper

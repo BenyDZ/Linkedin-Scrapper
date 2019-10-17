@@ -7,9 +7,7 @@ A way to scrappe data in linkedin
 Installation
 ============
 
-``
-pip install scrape-linkedin
-``
+``pip install linkedin-scrapper``
 
 Actual product
 ==============
@@ -26,28 +24,32 @@ Company scraper
 How to use it?
 ==============
 
-It's very simple, what you need are just, you're `linkedin email account` and your `password`.
+It's very simple, what you need are just, you're ``linkedin email account`` and your ``password``.
 Like a lot of person can have the same name, you need to know the company where he work, it'll easier 
 to find the right person like that.
 
 Usage example
 -------------
 
-``
-#import needed object
+`` #import needed object
+
 from linkedin_scraper import Person, Account
 
 myAccount = Account("youremail@gmail.com", "yourpassword")
+
 #login in linkedin account, return the driver
+
 driver = myAccount.login()
 
 #search a person
+
 person = Person("pankit chheda", "invideo", driver)
+
 person.search()
 
 #get experiences of the person
-experiences = person.get_experiences()
-``
+
+experiences = person.get_experiences() ``
 
 Experiences
 -----------
@@ -63,14 +65,15 @@ That is the past educations they have. ``get_training()``, return a list of scho
 
 Knowledge and tools
 -------------------
-That is the knowledge of sector and tools they know. ``get_Knowledges_tools()``, return a list of knowledges and/or tools.
+That is the knowledge of sector and tools they know. ``get_knowledges_tools()``, return a list of knowledges and/or tools.
 
-Others
+Drievrs
 ======
-Don't need to have any driver. Chrome driver will be automaticaly installed.
-Must login just the first time, after that your session will be saved on the driver cookies
+Don't need to have any driver exe files. Just enter a driver name and it will be installed.
 
 Version
 =======
-Version 1.0.x
-* First Publish, only Person scraper
+
+Version 1.0
+
+* First Publish

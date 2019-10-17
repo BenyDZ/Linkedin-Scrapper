@@ -2,7 +2,7 @@ from os.path import dirname, basename, isfile
 from .person import Person
 from .account import Account
 
-__version__ = "1"
+__version__ = "1.0"
 
 import glob
 modules = glob.glob(dirname(__file__)+"/*.py")
