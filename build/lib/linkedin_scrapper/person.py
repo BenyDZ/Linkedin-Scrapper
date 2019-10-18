@@ -11,15 +11,19 @@ class Person():
         #initialise needed object
         self.driver = driver
 
-    def search_by_name_and_key_word(self, full_name, key_word = None):
+    def search_by_name_and_key_word(self, full_name, keyword=""):
         """Function to search a person in linkedin by her name and the a key word like company name, 
         take driver, the full name and the domain name on the company where he work"""
+        #initialise the object full_name, by getting the full name of the person to search
+        self.full_name = full_name
+        #initialise the keyword
+        self.keyword = keyword
         #get the search bar
         self.search_bar = self.driver.find_element_by_class_name('search-global-typeahead__input')
         #clear search bar
         self.search_bar.clear()
         #fill search bar
-        self.search_bar.send_keys(self.full_name + " " + self.key_word)
+        self.search_bar.send_keys(self.full_name + " " + self.keyword)
         #wait 1 seconde
         time.sleep(1)
         #click on Enter
@@ -45,7 +49,7 @@ class Person():
         except:
             pass
         #wait 1 secondes
-        time.sleep(1)
+        time.sleep(5)
         #get all job_titles datas
         self.job_titles = self.driver.find_elements_by_xpath('//h3[@class="t-16 t-black t-bold"]')
         #get all company_names
@@ -54,7 +58,7 @@ class Person():
         #browse all company name and job titles in same times
         for self.job_title, self.company_name in zip(self.job_titles,self.company_names):
             #add job titles and companies names in the list experiences
-            self.experiences.append(self.job_title.text + ", " + self.company_name)       
+            self.experiences.append(self.job_title.text + ", " + self.company_name.text)       
         return self.experiences
     
     def get_training(self):
@@ -116,3 +120,6 @@ class Person():
         except:
             print("Sorry we found no knowledges or tools for this person!!!")      
         return self.knowledges_and_tools
+    
+    def get_contacts(self):
+        pass

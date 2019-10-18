@@ -45,16 +45,19 @@ This function allow you to search a person by using her name and a key word (lik
 `search_by_name_and_key_word()`, take the full name of the person and a key word. Note that the key word is optionally.But we recommend you to use a keyword to refine the search, we only take into account the first result of the search.
 
 ### Experiences
-That is the experiences they have. `get_experiences()`, it return a list of job titles and companies like `ceo, google`.
+This function scrape all experiences they have.. `get_experiences()`, it return a list of job titles and companies like `ceo, google`.
 
 ### skills
-That is the skills that they have. `get_skills()`, return a list of skills.
+This function scrape all skills they have. `get_skills()`, return a list of skills.
 
 ### Training
-That is the past educations they have. `get_training()`, return a list of school names, degrees and domains like `Marien-Ngouaby University, Master, Software Engineering`.
+This function scrape all of they training they have doing. `get_training()`, return a list of school names, degrees and domains like `Marien-Ngouaby University, Master, Software Engineering`.
 
 ### Knowledge and tools
-That is the knowledge of sector and tools they know. `get_knowledges_tools()`, return a list of knowledges and/or tools.
+This function scrape all knowledge of sector and tools they know. `get_knowledges_tools()`, return a list of knowledges and/or tools.
+
+### Contacts
+This function scrape all availlable contact on they profil. ``get_contacts()``, return a list of Contacts
 
 ## Drivers
 Don't need to have any driver exe files. Just enter a driver name and it will be installed.
