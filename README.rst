@@ -31,7 +31,7 @@ Like a lot of person can have the same name, a specific keyword to find them can
 Usage example
 -------------
 
-`` #import needed object
+``` #import needed object
 
 from linkedin_scrapper import Person, Account
 
@@ -49,7 +49,7 @@ person.search_by_account_link('https://www.linkedin.com/in/beny-dziengue-a3591a1
 
 #get experiences of the person
 
-experiences = person.get_experiences() ``
+experiences = person.get_experiences() ```
 
 Person-Scrapper
 ===============
