@@ -30,17 +30,21 @@ class Person():
         search_bar.send_keys(u'\ue007')
         if keyword != "":
             #wait 2 secondes
-            time.sleep(5)
+            time.sleep(2)
             #get and click on person links
-            driver.find_elements_by_tag_name('h3')[-1].click()
+            self.driver.find_elements_by_tag_name('h3')[-1].click()
+            time.sleep(2)
         else:
-            #wait 5 secondes
-            time.sleep(5)
-            search_result = driver.find_elements_by_tag_name('h3')
+            #wait 2 secondes
+            time.sleep(2)
+            search_result = self.driver.find_elements_by_tag_name('h3')
             #check if search result is upper than 2
             if len(search_result) > 2:
                 #click on the first result
                 search_result[1].click()
+            #wait 2 secondes
+            time.sleep(2)
+            
             
     def search_by_account_link(self, account_link):
         """Function to search a person by her """
@@ -147,29 +151,41 @@ class Person():
         #wait until presence on the contact section
         contact_section = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
             (By.ID, "pv-contact-info")))
-        time.sleep(5)
-        #get website container
-        website_container = self.driver.find_element_by_class_name(
-            'ci-websites')
-        #initialise website_info by calling functin extract_website_datas from functions
-        website_info = extract_website_datas(website_container)
-        contact.append(website_info)
-        #get phone container
-        phone_container = self.driver.find_element_by_class_name(
-            'ci-phone')
-        #initialise phone_info by calling functin extract_phone_number from functions
-        phone_info = extract_phone_number(phone_container)
-        contact.append(phone_info)
-        #get address container
-        address_container = self.driver.find_element_by_class_name(
-            'ci-address')
-        #initialise address_info by calling functin extract_address_datas from functions
-        address_info = extract_address_datas(address_container)
-        contact.append(address_info)
-        #get email container
-        email_container = self.driver.find_element_by_class_name(
-            'ci-email')
-        #initialise email_info by calling functin extract_email_datas from functions
-        email_info = extract_email_datas(email_container)
-        contact.append(email_info)
+        time.sleep(2)
+        try:
+            #get website container
+            website_container = self.driver.find_element_by_class_name(
+                'ci-websites')
+            #initialise website_info by calling functin extract_website_datas from functions
+            website_info = extract_website_datas(website_container)
+            contact.append(website_info)
+        except:
+            print('There is no website available for this user')
+        try:
+            #get phone container
+            phone_container = self.driver.find_element_by_class_name(
+                'ci-phone')
+            #initialise phone_info by calling functin extract_phone_number from functions
+            phone_info = extract_phone_number(phone_container)
+            contact.append(phone_info)
+        except:
+            print('There is no phone number available for this user')
+        try:
+            #get address container
+            address_container = self.driver.find_element_by_class_name(
+                'ci-address')
+            #initialise address_info by calling functin extract_address_datas from functions
+            address_info = extract_address_datas(address_container)
+            contact.append(address_info)
+        except:
+            print('There is no address available for this user')
+        try:
+            #get email container
+            email_container = self.driver.find_element_by_class_name(
+                'ci-email')
+            #initialise email_info by calling functin extract_email_datas from functions
+            email_info = extract_email_datas(email_container)
+            contact.append(email_info)
+        except:
+            print('There is no email address available for this user')
         return contact

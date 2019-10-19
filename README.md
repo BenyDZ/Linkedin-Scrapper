@@ -57,7 +57,7 @@ This function scrape all of they training they have doing. `get_training()`, ret
 This function scrape all knowledge of sector and tools they know. `get_knowledges_tools()`, return a list of knowledges and/or tools.
 
 ### Contacts
-This function scrape all availlable contact on they profil. ``get_contacts()``, return a list of Contacts
+This function scrape all availlable contact on they profil. ``get_contacts()``,  return a list of dictionary for each type of contact like phone or email.
 
 ## Drivers
 Don't need to have any driver exe files. Just enter a driver name and it will be installed.

@@ -18,8 +18,8 @@ Person scraper
 Coming soon ...
 ===============
 
-Person scraper : Scraping a person by adding her account link
-Company scraper
+Person scraper
+Company scraper, coming soon ...
 
 How to use it?
 ==============
@@ -85,7 +85,7 @@ This function scrape all knowledge of sector and tools they know. ``get_knowledg
 
 Contacts
 --------
-This function scrape all availlable contact on they profil. ``get_contacts()``, return a list of Contacts
+This function scrape all availlable contact on they profil. ``get_contacts()``, return a list of dictionary for each type of contact like phone or email.
 
 Drivers
 =======
@@ -101,4 +101,4 @@ Version
 
 Version 1.0
 
-* First Publish
+* First Publish.
