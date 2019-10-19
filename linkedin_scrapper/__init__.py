@@ -1,6 +1,7 @@
 from os.path import dirname, basename, isfile
 from .person import Person
 from .account import Account
+from .functions import *
 
 __version__ = "1.0"
 

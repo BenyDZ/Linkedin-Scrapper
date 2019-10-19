@@ -3,6 +3,7 @@ setup.cfg
 setup.py
 linkedin_scrapper/__init__.py
 linkedin_scrapper/account.py
+linkedin_scrapper/functions.py
 linkedin_scrapper/person.py
 linkedin_scrapper.egg-info/PKG-INFO
 linkedin_scrapper.egg-info/SOURCES.txt
