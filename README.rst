@@ -31,25 +31,16 @@ Like a lot of person can have the same name, a specific keyword to find them can
 Usage example
 -------------
 
-.. code-block::
+.. :: python
     #import needed object
-
     from linkedin_scrapper import Person, Account
-
     myAccount = Account("your_email@gmail.com", "your_password", "your_driver")
-
     #login in linkedin account, return the driver
-
     driver = myAccount.login()
-
     #search a person
-
     person = Person(driver)
-
     person.search_by_account_link('https://www.linkedin.com/in/beny-dziengue-a3591a188')
-
     #get experiences of the person
-
     experiences = person.get_experiences()
 
 Person-Scrapper
