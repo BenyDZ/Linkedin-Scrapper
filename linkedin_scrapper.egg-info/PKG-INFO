@@ -40,7 +40,7 @@ Description: ==================
         Usage example
         -------------
         
-        ``` #import needed object
+        #import needed object
         
         from linkedin_scrapper import Person, Account
         
@@ -58,7 +58,7 @@ Description: ==================
         
         #get experiences of the person
         
-        experiences = person.get_experiences() ```
+        experiences = person.get_experiences()
         
         Person-Scrapper
         ===============
@@ -78,7 +78,7 @@ Description: ==================
         
         Experiences
         -----------
-        This function scrape all experiences they have. ``get_experiences()``, it return a list of job titles and companies like **ceo, google**.
+        This function scrape all experiences they have. ``get_experiences()``, it return a list of dictionary.
         
         Skills
         ------
@@ -86,7 +86,7 @@ Description: ==================
         
         Training
         --------
-        This function scrape all of they training they have doing. ``get_training()``, return a list of school names, degrees and domains like **Marien-Ngouaby University, Master, Software Engineering**.
+        This function scrape all of they training they have doing. ``get_training()``, return a list of dictionary.
         
         Knowledge and tools
         -------------------
@@ -94,7 +94,7 @@ Description: ==================
         
         Contacts
         --------
-        This function scrape all availlable contact on they profil. ``get_contacts()``, return a list of dictionary for each type of contact like phone or email.
+        This function scrape all availlable contact on they profil. ``get_contacts()``, return a dictionary.
         
         Drivers
         =======
@@ -107,10 +107,14 @@ Description: ==================
         
         * ie : For internet explorer driver
         
-        * edge : For microsoft edge driver
-        
         Version
         =======
+        
+        Version 1.1
+        
+        * Restructuring data output
+        
+        * The edge driver is no longer available
         
         Version 1.0
         

@@ -31,7 +31,7 @@ Like a lot of person can have the same name, a specific keyword to find them can
 Usage example
 -------------
 
-#import needed object
+``` #import needed object
 
 from linkedin_scrapper import Person, Account
 
@@ -49,7 +49,7 @@ person.search_by_account_link('https://www.linkedin.com/in/beny-dziengue-a3591a1
 
 #get experiences of the person
 
-experiences = person.get_experiences()
+experiences = person.get_experiences() ```
 
 Person-Scrapper
 ===============
@@ -69,7 +69,7 @@ This function allow you to search a person by using her name and a key word (lik
 
 Experiences
 -----------
-This function scrape all experiences they have. ``get_experiences()``, it return a list of dictionary.
+This function scrape all experiences they have. ``get_experiences()``, it return a list of dictionaries.
 
 Skills
 ------
@@ -77,7 +77,7 @@ This function scrape all skills they have. ``get_skills()``, return a list of sk
 
 Training
 --------
-This function scrape all of they training they have doing. ``get_training()``, return a list of dictionary.
+This function scrape all of they training they have doing. ``get_training()``, return a list of dictionaries.
 
 Knowledge and tools
 -------------------
