@@ -65,19 +65,35 @@ class Person():
                 '//button[@class="pv-profile-section__see-more-inline pv-profile-section__text-truncate-toggle link link-without-hover-state"]').click()
         except:
             pass
-
         #get all job_titles datas
         job_titles = self.driver.find_elements_by_xpath(
             '//h3[@class="t-16 t-black t-bold"]')
         #get all company_names
         company_names = self.driver.find_elements_by_xpath(
             '//p[@class="pv-entity__secondary-title t-14 t-black t-normal"]')
-        experiences = []
+        #get all employements dates
+        employements_dates = self.driver.find_elements_by_class_name(
+            'pv-entity__date-range')
+        #get all duration of employements
+        duration_of_employements = self.driver.find_elements_by_class_name(
+            'pv-entity__bullet-item-v2')
+        #get all locations
+        locations = self.driver.find_elements_by_class_name(
+            'pv-entity__location')
+        list_of_experiences=[]
+        index=1
         #browse all company name and job titles in same times
-        for job_title, company_name in zip(job_titles, company_names):
-            #add job titles and companies names in the list experiences
-            experiences.append(job_title.text + ", " + company_name.text)       
-        return experiences
+        for job_title, company_name, employement_date, duration_of_employement, location in zip(
+            job_titles, company_names, employements_dates, duration_of_employements, locations):
+            globals()["experiences" + str(index)]={}
+            globals()["experiences" + str(index)]["Job title"] = job_title.text
+            globals()["experiences" + str(index)]["Company"] = company_name.text
+            globals()["experiences" + str(index)]["Employement date"] = employement_date.text.split("\n")[1]
+            globals()["experiences" + str(index)]["Duration of employement"] = duration_of_employement.text
+            globals()["experiences" + str(index)]["Location"] = location.text.split("\n")[1]
+            list_of_experiences.append(globals()["experiences" + str(index)])
+            index += 1
+        return list_of_experiences
     
     def get_training(self):
         """Function to get all trainings datas"""
@@ -95,12 +111,25 @@ class Person():
         #get all trainings domain
         domains = self.driver.find_elements_by_xpath(
             '//p[@class="pv-entity__secondary-title pv-entity__fos t-14 t-black t-normal"]//span[@class="pv-entity__comma-item"]')
-        trainig = []
+        durations = self.driver.find_elements_by_class_name('pv-entity__dates')
+        activities = self.driver.find_elements_by_class_name('activities-societies')
+        descriptions = self.driver.find_elements_by_class_name('pv-entity__description')
+        list_of_trainig = []
+        index=1
         #browse all school_names, degrees, domain in the same time
-        for school_name, degree, domain in zip(school_names, degrees, domains):
-            trainig.append(school_name.text + ", " + degree.text + ", " + domain.text)
-        return trainig
-    
+        for school_name, degree, domain, duration, activity, description  in zip(
+            school_names, degrees, domains, durations, activities, descriptions):
+            globals()["training" + str(index)]={}
+            globals()["training" + str(index)]["School name"] = school_name.text
+            globals()["training" + str(index)]["Degree"] = degree.text
+            globals()["training" + str(index)]["Domain"] = domain.text
+            globals()["training" + str(index)]["Duration"] = duration.text.split("\n")[1]
+            globals()["training" + str(index)]["Activity"] = activity.text
+            globals()["training" + str(index)]["Description"] = description.text
+            list_of_trainig.append(globals()["training" + str(index)])
+            index += 1
+        return list_of_trainig
+   
     def get_skills(self):
         """Function to get all skills datas"""
         #scroll until the midlle of the page
@@ -111,11 +140,11 @@ class Person():
         #get all skills
         time.sleep(1)
         skills_names = self.driver.find_elements_by_xpath(
-            '//ol[@class="pv-skill-categories-section__top-skills pv-profile-section__section-info section-info pb1"]/li/div/div/p')    
+            '//ol[@class="pv-skill-categories-section__top-skills pv-profile-section__section-info section-info pb1"]/li/div/div/p')
         skills = []
         #browse all skills
         for skill in skills_names:
-            skills.append(skill.text)     
+            skills.append(skill.text)
         return skills
 
     def get_knowledges_tools(self):
@@ -125,6 +154,7 @@ class Person():
         #wait until presence on the education section
         education_section = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
             (By.ID, "education-section")))
+        knowledges_and_tools = []
         try:
             #click on the see more button
             self.driver.find_element_by_xpath(
@@ -134,7 +164,6 @@ class Person():
             #get all knowledges
             knowledges = self.driver.find_elements_by_xpath(
                 '//div[@id="skill-categories-expanded"]/div/ol/li/div/div/p')  
-            knowledges_and_tools = []
             #browse all knolledges
             for knowledge in knowledges:
                 knowledges_and_tools.append(knowledge.text)
@@ -144,21 +173,21 @@ class Person():
     
     def get_contacts(self):
         """function to get contact datas, return a list of dictionnary that contain contact datas"""
-        contact=[]
+        contact={}
         #click on contact link
         contact_link = self.driver.find_element_by_xpath(
             '//a[@data-control-name="contact_see_more"]').click()
         #wait until presence on the contact section
         contact_section = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located(
             (By.ID, "pv-contact-info")))
-        time.sleep(2)
+        time.sleep(1)
         try:
             #get website container
             website_container = self.driver.find_element_by_class_name(
                 'ci-websites')
             #initialise website_info by calling functin extract_website_datas from functions
             website_info = extract_website_datas(website_container)
-            contact.append(website_info)
+            contact["Websites"] = website_info["Websites"]
         except:
             print('There is no website available for this user')
         try:
@@ -167,7 +196,7 @@ class Person():
                 'ci-phone')
             #initialise phone_info by calling functin extract_phone_number from functions
             phone_info = extract_phone_number(phone_container)
-            contact.append(phone_info)
+            contact["Phone number"] = phone_info["Phone number"]
         except:
             print('There is no phone number available for this user')
         try:
@@ -176,7 +205,8 @@ class Person():
                 'ci-address')
             #initialise address_info by calling functin extract_address_datas from functions
             address_info = extract_address_datas(address_container)
-            contact.append(address_info)
+            contact["Address"] = address_info["Address"]
+            contact["Map link"] = address_info["Map link"]
         except:
             print('There is no address available for this user')
         try:
@@ -185,7 +215,7 @@ class Person():
                 'ci-email')
             #initialise email_info by calling functin extract_email_datas from functions
             email_info = extract_email_datas(email_container)
-            contact.append(email_info)
+            contact["Email"] = email_info["Email"]
         except:
             print('There is no email address available for this user')
         return contact

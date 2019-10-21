@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
 Name: linkedin-scrapper
-Version: 1.0
+Version: 1.1
 Summary: A way to scrape user datas from linkedin
 Home-page: https://github.com/BenyDZ/Linkedin-Scrapper
 Author: Beny Dziengue
 Author-email: bdziengue@gmail.com
 License: UNKNOWN
-Download-URL: https://github.com/BenyDZ/Linkedin-Scrapper.git/dist/1.0.tar.gz
+Download-URL: https://github.com/BenyDZ/Linkedin-Scrapper.git/dist/1.1.tar.gz
 Description: ==================
         Linkedin_Scrapper
         ==================
@@ -27,8 +27,8 @@ Description: ==================
         Coming soon ...
         ===============
         
-        Person scraper : Scraping a person by adding her account link
-        Company scraper
+        Person scraper
+        Company scraper, coming soon ...
         
         How to use it?
         ==============
@@ -40,7 +40,7 @@ Description: ==================
         Usage example
         -------------
         
-        `` #import needed object
+        ``` #import needed object
         
         from linkedin_scrapper import Person, Account
         
@@ -58,7 +58,7 @@ Description: ==================
         
         #get experiences of the person
         
-        experiences = person.get_experiences() ``
+        experiences = person.get_experiences() ```
         
         Person-Scrapper
         ===============
@@ -94,15 +94,19 @@ Description: ==================
         
         Contacts
         --------
-        This function scrape all availlable contact on they profil. ``get_contacts()``, return a list of Contacts
+        This function scrape all availlable contact on they profil. ``get_contacts()``, return a list of dictionary for each type of contact like phone or email.
         
         Drivers
         =======
         Don't need to have any driver exe files. Just enter a driver name and it will be installed.
         Names of availlable drivers are :
+        
         * chrome : For chromedriver
+        
         * firefox : For geckodriver
+        
         * ie : For internet explorer driver
+        
         * edge : For microsoft edge driver
         
         Version
@@ -110,7 +114,7 @@ Description: ==================
         
         Version 1.0
         
-        * First Publish
+        * First Publish.
 Keywords: linkedin,scraping,scraper
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3

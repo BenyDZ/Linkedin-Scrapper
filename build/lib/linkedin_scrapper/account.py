@@ -4,10 +4,9 @@ import time, sys
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.microsoft import EdgeDriverManager, IEDriverManager
+from webdriver_manager.microsoft import IEDriverManager
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.edge.options import Options as EdgeOptions
 from selenium.webdriver.ie.options import Options as IeOptions
 
 
@@ -37,16 +36,6 @@ class Account():
         self.options.add_argument("user-data-dir=selenium") 
         #initialise driver
         self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), firefox_options=self.options)
-        return self.driver
-    
-    def connect_edge_driver(self):
-        """Functions to connect with edge driver """
-        #initialise chrome options
-        self.options = EdgeOptions()
-        #add cookies on driver
-        self.options.add_argument("user-data-dir=selenium") 
-        #initialise driver
-        self.driver = webdriver.Edge(EdgeDriverManager().install(), edge_options=self.options)
         return self.driver
 
     def connect_ie_driver(self):
@@ -82,7 +71,7 @@ class Account():
         self.login_button.click()
 
     def login(self):
-        """Function to login in linkedinq"""
+        """Function to login in linkedin"""
         #maximize the size of chrome driver
         # chrome_options.add_argument("--start-maximized")
         #create a webdriver object, return the object driver of type selenium.webdriver.chrome.webdriver.WebDriver 
@@ -99,13 +88,6 @@ class Account():
                 self.driver = self.connect_ie_driver()
             except:
                 print("Sorry, you can't use internet explorer driver, please try another driver!")
-                sys.exit(0)
-        elif self.driver_name == "edge":
-            try:
-                #try to connect with edge driver
-                self.driver = self.connect_edge_driver()
-            except:
-                print("Sorry, you can't use edge driver, please try another driver!")
                 sys.exit(0)
         else:
             try:

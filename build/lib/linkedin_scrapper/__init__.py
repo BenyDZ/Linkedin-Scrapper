@@ -3,7 +3,7 @@ from .person import Person
 from .account import Account
 from .functions import *
 
-__version__ = "1.0"
+__version__ = "1.1"
 
 import glob
 modules = glob.glob(dirname(__file__)+"/*.py")

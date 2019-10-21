@@ -12,7 +12,7 @@ Person scraper
 Company scraper (Coming soon)
 
 # How to use it?
-It's very simple, what you need are just, you're `linkedin email account` and your `password`.
+It's very simple, what you need are just, your `linkedin email account` and your `password`.
 After, you have two choice to make a search, with an account link or with a full name and a keyword if possible.
 Like a lot of person can have the same name, a specific keyword to find them can be important.
 
@@ -45,19 +45,19 @@ This function allow you to search a person by using her name and a key word (lik
 `search_by_name_and_key_word()`, take the full name of the person and a key word. Note that the key word is optionally.But we recommend you to use a keyword to refine the search, we only take into account the first result of the search.
 
 ### Experiences
-This function scrape all experiences they have.. `get_experiences()`, it return a list of job titles and companies like `ceo, google`.
+This function scrape all experiences they have.. `get_experiences()`, it return a list of dictionaries.
 
 ### skills
 This function scrape all skills they have. `get_skills()`, return a list of skills.
 
 ### Training
-This function scrape all of they training they have doing. `get_training()`, return a list of school names, degrees and domains like `Marien-Ngouaby University, Master, Software Engineering`.
+This function scrape all of they training they have doing. `get_training()`, return a list of dictionaries.
 
 ### Knowledge and tools
 This function scrape all knowledge of sector and tools they know. `get_knowledges_tools()`, return a list of knowledges and/or tools.
 
 ### Contacts
-This function scrape all availlable contact on they profil. ``get_contacts()``,  return a list of dictionary for each type of contact like phone or email.
+This function scrape all availlable contact on they profil. ``get_contacts()``,  return a list of dictionaries.
 
 ## Drivers
 Don't need to have any driver exe files. Just enter a driver name and it will be installed.
@@ -65,9 +65,14 @@ Names of availlable drivers are :
 * chrome : For chromedriver
 * firefox : For geckodriver
 * ie : For internet explorer driver
-* edge : For microsoft edge driver
 
 # Version
+
+Version 1.1
+
+* Restructuring data output
+
+* The edge driver is no longer available
 
 Version 1.0
 
