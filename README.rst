@@ -9,14 +9,8 @@ Installation
 
 ``pip install linkedin-scrapper``
 
-Actual product
+Products
 ==============
-
-Person scraper
-
-
-Coming soon ...
-===============
 
 Person scraper
 

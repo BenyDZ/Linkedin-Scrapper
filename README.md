@@ -6,7 +6,7 @@ A way to scrappe data in linkedin
 pip install linkedin-scrapper
 ```
 
-# Product
+# Products
 Person scraper
 
 Company scraper (Coming soon)
