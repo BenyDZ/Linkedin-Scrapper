@@ -26,7 +26,6 @@ Like a lot of person can have the same name, a specific keyword to find them can
 Usage example
 -------------
 
-.. code-block :: python
 #import needed object
 
 from linkedin_scrapper import Person, Account

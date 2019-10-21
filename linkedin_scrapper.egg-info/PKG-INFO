@@ -18,16 +18,11 @@ Description: ==================
         
         ``pip install linkedin-scrapper``
         
-        Actual product
+        Products
         ==============
         
         Person scraper
         
-        
-        Coming soon ...
-        ===============
-        
-        Person scraper
         Company scraper, coming soon ...
         
         How to use it?
@@ -40,7 +35,8 @@ Description: ==================
         Usage example
         -------------
         
-        ``` #import needed object
+        .. code-block :: python
+        #import needed object
         
         from linkedin_scrapper import Person, Account
         
@@ -58,7 +54,7 @@ Description: ==================
         
         #get experiences of the person
         
-        experiences = person.get_experiences() ```
+        experiences = person.get_experiences()
         
         Person-Scrapper
         ===============
