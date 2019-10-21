@@ -40,7 +40,7 @@ Description: ==================
         Usage example
         -------------
         
-        #import needed object
+        ``` #import needed object
         
         from linkedin_scrapper import Person, Account
         
@@ -58,7 +58,7 @@ Description: ==================
         
         #get experiences of the person
         
-        experiences = person.get_experiences()
+        experiences = person.get_experiences() ```
         
         Person-Scrapper
         ===============
@@ -78,7 +78,7 @@ Description: ==================
         
         Experiences
         -----------
-        This function scrape all experiences they have. ``get_experiences()``, it return a list of dictionary.
+        This function scrape all experiences they have. ``get_experiences()``, it return a list of dictionaries.
         
         Skills
         ------
@@ -86,7 +86,7 @@ Description: ==================
         
         Training
         --------
-        This function scrape all of they training they have doing. ``get_training()``, return a list of dictionary.
+        This function scrape all of they training they have doing. ``get_training()``, return a list of dictionaries.
         
         Knowledge and tools
         -------------------
