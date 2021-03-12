@@ -21,7 +21,7 @@ setup(
         packages = ['linkedin_scrapper'], # this must be the same as the name above
         version = version,
         description = 'A way to scrape user datas from linkedin',
-        author = 'Beny Dziengue',
+        author = 'Beny DZIENGUE',
         author_email = 'bdziengue@gmail.com',
         long_description=long_description,
         long_description_content_type="text/markdown",
